@@ -1,0 +1,40 @@
+.icons {
+    display: flex;
+    gap: 1rem;
+    justify-content:flex-end;
+}
+
+.nav {
+    background-color:#5d5b8d;
+    padding: 2rem;
+    border-radius: 0px 5px 0px 0px;
+}
+.chat {
+    margin-left: -24px;
+
+}
+.Message {
+    background-color: lightgray;
+    padding-bottom:auto;
+    min-height: 29rem;
+}
+.Input {
+    background-color: white;
+    padding: 1rem;
+}
+.input {
+    height: 50px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.input > input {
+    width: 70%;
+}
+.attach {
+    height: 20px;
+    width: 20px;
+    margin-right: 2rem;
+}
