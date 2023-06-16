@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {Container,Row,Col} from 'react-bootstrap';
 import './Chat.css';
 import Messages from './Messages';
 import Input from './Input';
+import { doc, onSnapshot } from 'firebase/firestore';
+import { db } from '../firebase';
+import { AuthContext } from '../context/AuthContext';
 const Chat = () => {
+  const {currentUser} = useContext(AuthContext);
+  const [chats,setChats] =useState([]);
+  useEffect(()=>{
+    const unsub = onSnapshot(doc(db,"userChats",currentUser.uid,(doc)=>{
+      setChats(doc.data);
+    }));
+    return () =>{
+      unsub();
+    }
+  },[currentUser.uid])
   return (
     <Container className='chat'>
         <Row className='nav'>

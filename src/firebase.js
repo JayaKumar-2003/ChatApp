@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import {getAuth} from 'firebase/auth';
 import { getStorage, ref } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -12,10 +13,11 @@ const firebaseConfig = {
   projectId: "chat-eaddd",
   storageBucket: "chat-eaddd.appspot.com",
   messagingSenderId: "288733295521",
-  appId: "1:288733295521:web:71365d40fbe4dc144191e0"
+  appId: "1:288733295521:web:71365d40 fbe4dc144191e0"
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const storage = getStorage();
+export const db = getFirestore();
